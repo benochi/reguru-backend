@@ -1,0 +1,69 @@
+
+
+###Login Route
+POST http://localhost:5000/auth/login
+Content-Type: application/json
+
+{
+  "username": "bob1",
+  "password": "bobisbob"
+}
+
+
+###Register Route
+POST http://localhost:5000/auth/register
+Content-Type: application/json
+
+{
+  "username": "bob40",
+  "email": "bob41@bob.com",
+  "password": "bobisbob",
+  "liked_properties": ["61fc412401a62a6c71a965a9", "61fc412401a62a6c71a96752"],
+  "managed_properties": []
+}
+
+###Logout Route
+DELETE http://localhost:5000/auth/logout
+Content-Type: application/json
+
+{
+  "username": "bob1",
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImJvYjEiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2NDQ4NDc1MTZ9.IBqjzzyTja3e-TCUTOghp3qz5QXTRN61Bavlisn5jvg"
+}
+
+###Get current User
+GET  http://localhost:5000/user/bob1
+Content-Type: application/json
+
+###Add property_id to User liked properties
+POST  http://localhost:5000/user/bob1/liked?propertyId=61fc412401a62a6c71a97113
+Content-Type: application/json
+
+###Add property_id to User managed properties
+POST  http://localhost:5000/user/bob1/managed?propertyId=61fc412401a62a6c71a95ec7
+Content-Type: application/json
+
+###PROPERTY API CALL ROUTES
+GET http://localhost:5000/prop/properties/
+
+###PROPERTY all category Query
+GET http://localhost:5000/prop/properties/query/query?priceMin=100000&priceMax=100000000&bedrooms=0&bathrooms=0&sqft=0&limit=&page=400
+  //http://localhost:5000/prop/properties/query/query?priceMin=20000&priceMax=10000000&bathrooms=1&bedrooms=1&sqft=1&limit=10&page=1 
+
+###PROPERTY by ID
+GET http://localhost:5000/prop/properties/61fc412401a62a6c71a95ec7
+
+###PROPERTY by address
+GET http://localhost:5000/prop/properties/address/4057 Chelsea Ave, Memphis, TN 38108
+
+###PROPERTY by price
+GET http://localhost:5000/prop/properties/price/price?priceMin=1550000&priceMax=3000000
+
+###PROPERTY by beds
+GET http://localhost:5000/prop/properties/beds/6
+
+###PROPERTY by baths
+GET http://localhost:5000/prop/properties/baths/9
+
+###PROPERTY by sqft
+GET http://localhost:5000/prop/properties/sqft/10000
