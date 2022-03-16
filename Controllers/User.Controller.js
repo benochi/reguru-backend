@@ -10,10 +10,8 @@ module.exports = {
       if (!user) throw createError.NotFound('User not registered') 
       let resp = {
         username: user.username,
-        email: user.email,
         liked_properties: user.liked_properties,
-        managed_properties: user.managed_properties,
-        admin: user.isAdmin
+        managed_properties: user.managed_properties
       }
       
       return res.json(resp);
