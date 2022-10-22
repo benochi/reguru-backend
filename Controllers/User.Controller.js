@@ -54,7 +54,7 @@ module.exports = {
       )
       return res.json(response)
     } catch(error){
-      return next(createError.BadRequest('Unable to add property_ID'))
+      return next(createError.BadRequest('Unable to remove property_ID'))
     } 
   },
 
