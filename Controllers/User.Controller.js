@@ -75,7 +75,7 @@ module.exports = {
       )
       return res.json(response)
     } catch(error){
-      return next(createError.BadRequest('Unable to find poroperty to delete'))
+      return next(createError.BadRequest('Unable to find property.'))
     } 
   },
 
